@@ -1,0 +1,40 @@
+input, textarea {
+  background-color: transparent;
+  -webkit-box-shadow: -3px -3px 3px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.6);
+          box-shadow: -3px -3px 3px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.6);
+}
+
+input:focus, textarea:focus {
+  background-color: transparent;
+  border-color: transparent;
+  -webkit-box-shadow: inset -3px -3px 3px #ffffff73, inset 3px 3px 5px rgba(94, 104, 121, 0.6);
+  box-shadow: inset -3px -3px 3px #ffffff73, inset 3px 3px 5px rgba(94, 104, 121, 0.6);
+}
+
+::-webkit-input-placeholder {
+  color: #8392a8;
+  text-shadow: 2px 2px 2px white, 1px 1px 1px #e0e4e9;
+  font-size: 15px;
+}
+
+:-ms-input-placeholder {
+  color: #8392a8;
+  text-shadow: 2px 2px 2px white, 1px 1px 1px #e0e4e9;
+  font-size: 15px;
+}
+
+::-ms-input-placeholder {
+  color: #8392a8;
+  text-shadow: 2px 2px 2px white, 1px 1px 1px #e0e4e9;
+  font-size: 15px;
+}
+
+::placeholder {
+  color: #8392a8;
+  text-shadow: 2px 2px 2px white, 1px 1px 1px #e0e4e9;
+  font-size: 15px;
+}
+
+textarea {
+  border-radius: 10px;
+}

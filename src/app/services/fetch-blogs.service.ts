@@ -1,0 +1,13 @@
+import { Injectable, OnInit } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FetchBlogsService {
+
+  constructor() { }
+
+  ngOnInit(): void {
+    
+  }
+}

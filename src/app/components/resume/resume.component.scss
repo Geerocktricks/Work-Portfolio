@@ -1,0 +1,137 @@
+@import '../../../themingKit/src/main-theme';
+
+.main-content {
+    background-color: $gray-100;
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+
+    .heading {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin-top: 30px;
+    
+        .description {
+            justify-content: end;
+            align-self: center;
+    
+        }
+    }
+
+    .bio {
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .cardHolder {
+            position: relative;
+
+            .dateCovered {
+                position: absolute;
+                left: 0;
+            }
+        }
+        li {
+            width: 100%;
+            height: 15px;
+            list-style: none;
+            border-radius: 3px;
+            box-shadow: inset -3px -3px 3px #ffffff73,
+            inset 3px 3px 5px rgba(94, 104, 121, .6);
+
+            h5 { 
+                background: $primary-light;
+                background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
+                height: 15px;
+                border-radius: 3px;
+            }
+            .bar {
+                background: $secondary-light;
+                background: linear-gradient(90deg, $secondary-light 0%, $primary-light 100%);
+            }
+
+            // Skill percentage
+            .javascript {
+                width: 90%;
+            };
+            .typescript {
+                width: 80%;
+            };
+            .nodejs {
+                width: 70%;
+            }
+            .angular {
+                width: 90%;
+            }
+            .express {
+                width: 70%;
+            }
+            .mongo {
+                width: 80%;
+            }
+            .bootstrap {
+                width: 95%;
+            }
+            .sass {
+                width: 70%;
+            }
+            .python {
+                width: 80%;
+            }
+            .flask {
+                width: 70%;
+            }
+            .django {
+                width: 75%;
+            }
+            .postgressOrms {
+                width: 80%;
+            }
+        }
+
+        // Professional skills
+        .widget-container {
+            display: flex;
+            justify-content: center;
+
+            .ui-widget {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 10rem;
+                height: 10rem;
+                margin: 1.5 rem;
+                border: 1.2rem solid $primary;
+                text-align: center;
+                border-radius: 9rem;
+                box-shadow: inset 0 0 7px rgba(0, 0, 0, .6);
+                border-bottom-color: $gray-100;
+                border-top-color: $gray-100;
+                border-right-color: $gray-100;
+                box-sizing: border-box;
+            }
+
+            .ui-widget:nth-child(2), .ui-widget:last-child {
+                border-left-color: $primary;
+                border-top-color: $primary-light;
+                border-right-color: $secondary-light;
+                border-bottom-color: $gray-100;
+            }
+            .ui-widget:nth-child(3) {
+                border-left-color: $primary;
+                border-top-color: $primary-light;
+                border-right-color: $gray-100;
+                border-bottom-color: $gray-100;
+            }
+        }
+    }
+
+    .Linkedin {
+        a {
+            text-decoration: none;
+        }
+    }
+
+    
+}

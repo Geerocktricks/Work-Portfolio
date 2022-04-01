@@ -1,0 +1,28 @@
+@import '../../../themingKit/src/main-theme';
+
+.main-content {
+    background-color: $gray-100;
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+    .heading {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin-top: 30px;
+    
+        .description {
+            justify-content: end;
+            align-self: center;
+    
+        }
+    }
+
+    .contact {
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1em;
+        }
+    }
+    
+}

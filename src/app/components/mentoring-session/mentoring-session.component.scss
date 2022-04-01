@@ -1,0 +1,72 @@
+@import '../../../themingKit/src/main-theme';
+
+.main-content {
+    background-color: $gray-100;
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+    .heading {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin-top: 30px;
+    
+        .description {
+            justify-content: end;
+            align-self: center;
+    
+        }
+    };
+
+    .bookSession {
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .prices {
+        @media screen and (min-width: 1200px) {
+            display: grid;
+            grid-template-columns: repeat(2, 3fr);
+        }
+        grid-gap: 1em;
+
+        .card {
+            .card-header {
+                background: $primary-light;
+                background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
+                color: $gray-100;
+            }
+            .card-body {
+                background-color: $gray-100;
+
+                ul {
+                    list-style: none;
+                    display: block;
+                    li {
+                        color: darken($color: $gray-100, $amount: 30%);
+                        text-shadow: 2px 2px 2px rgba(255, 255, 255, 1), 1px 1px 1px lighten($color: $gray-100, $amount: 1%);
+                        font-size: 15px;
+                    }
+
+                    li::before {
+                        content: '✓';
+                        margin-right: .2em;
+                    }
+                }
+                .bookNow {
+                    background: $primary-light;
+                    background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
+                    color: $gray-100;
+
+                    :hover {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

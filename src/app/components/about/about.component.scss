@@ -1,0 +1,103 @@
+@import '../../../themingKit/src/main-theme';
+
+.main-content {
+    background-color: $gray-100;
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+    .heading {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin-top: 30px;
+    
+        .description {
+            justify-content: end;
+            align-self: center;
+    
+        }
+    }
+    .bio {
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .servicesOffered {
+        position: relative;
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            grid-column-gap: 2em;
+        }
+
+        img {
+            height: 100px;
+            opacity: .8;
+        }
+    }
+
+    .testimonials {
+        background: $primary-light;
+        background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
+        @media screen and (min-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .testimonials-section {
+
+            .testimonials-card {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+
+                .img-holder-upper {
+                    height: 90px;
+                    width: 90px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .img-holder-inner {
+                        height: 85px;
+                        width: 85px;
+                        border-radius: 50%;
+                        justify-self: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            height: 75px;
+                            width: 75px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .blogs-section {
+        .blog-wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        img {
+            height: 80px;
+            width: 100px;
+        }
+
+        .blog-trancate {
+
+            a {
+                text-decoration: none;
+            }
+        }
+        
+    }
+    
+}

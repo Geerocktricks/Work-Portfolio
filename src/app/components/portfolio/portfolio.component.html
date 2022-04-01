@@ -1,0 +1,44 @@
+<div class="container main-content pt-4" >
+    <div class="heading row pt-4">
+        <div class="title-1 btn-up">
+            <h6 class="display-6">
+                Portfolio
+            </h6>
+        </div>
+        <div class="description">
+            <p>
+                <span>Some of my best works</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="row projects col-md-12 p-4">
+        <div class="toggle-buttons mb-4">
+            <ul class="ps-4">
+                <li><span class="text-muted">All</span></li>
+                <li><span class="text-muted">Javascript</span></li>
+                <li><span class="text-muted">Angular</span></li>
+                <li><span class="text-muted">Python</span></li>
+                <li><span class="text-muted">Flask</span></li>
+                <li><span class="text-muted">Django</span></li>
+            </ul>
+        </div>
+        <div class="portfolio-array p-4 row col-md-12" *ngFor = 'let project of projects'>
+            <div class="carded-sect col-md-3">
+                <a [routerLink]="['/portfolio', project.title]">
+                    <img src="{{project.image}}" alt="Project image" class="img-fluid">
+                </a>
+                <div class="middle text-white">
+                    <div class="text">
+                        <ul>
+                            <li *ngFor = 'let tech of project.technologies'>
+                                {{tech}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

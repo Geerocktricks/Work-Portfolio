@@ -1,0 +1,61 @@
+@import '../themingKit/src/main-theme';
+
+nav {
+    z-index: 9999;
+    background-color: $gray-100;
+    img {
+        height: 35px;
+        width: 35px;
+        margin-right: 5px;
+    }
+    
+}
+mat-drawer-container {
+    background-color: $gray-100;
+    height: 100%;
+    mat-drawer {
+        background-color: $gray-100;
+        width: 300px;
+        max-height: 100vh;
+        position: fixed;
+
+        img {
+            height: 100px;
+            width: 100px;
+        }
+        h3 {
+        }
+
+        .social-svg {
+            border-radius: 5px;
+        }
+    }
+    mat-drawer-content {
+        @media screen and (max-width: 768px) {
+            display: grid;
+            grid-template-columns: 0% 100%;
+            background-color: $gray-100;
+        }
+        display: flex;
+        justify-content: space-between;
+        background-color: $gray-500;
+        @media screen and (min-width: 768px) {
+            padding: 0 10px 0 0;
+        }
+
+        .mat-aside {
+            background-color: $gray-100;
+            width: 300px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .mat-aside {
+                display: none;
+            } 
+        }
+    }
+}

@@ -1,0 +1,23 @@
+span, p {
+    span {
+        color: darken($color: $gray-100, $amount: 30%);
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 1), 1px 1px 1px lighten($color: $gray-100, $amount: 1%);
+        font-size: 15px;
+    }
+};
+
+.testimony-holder {
+    p {
+        color: darken($color: $secondary-light, $amount: 30%);
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
+        font-size: 15px;
+    }
+}
+
+.blog-trancate {
+    p {
+        color: darken($color: $secondary-light, $amount: 30%);
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
+        font-size: 15px;
+    }
+}

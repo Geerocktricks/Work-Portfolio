@@ -1,0 +1,65 @@
+<div class="container main-content pt-4">
+    <div class="heading row pt-4">
+        <div class="title-1 btn-up" *ngIf = 'portfolio'>
+            <h6 class="display-6">
+                Project {{portfolio.id}}
+            </h6>
+        </div>
+        <div class="description">
+            <a routerLink="portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                        <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+                      </svg>
+                    Go Back
+            </a>
+        </div>
+    </div>
+
+    <div class="row description-body col-md-12 p-4" *ngIf = 'portfolio'>
+        <div class="aboutMe col-md-5">
+            <h4 class="fs-3 mb-4">{{portfolio.title}}</h4>
+            <img src="{{portfolio.image}}" alt="{{portfolio.title}} image" class="img-fluid btn-up carded mb-4">
+        </div>
+        <div class="mission col-md-5">
+            <h4 class="fs-3 mb-4">Description</h4>
+            <p>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    {{portfolio.title}}
+                </span>
+            </p>
+
+            <p>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                        <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+                        <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/>
+                    </svg>
+                    <a href="{{portfolio.link}}" target="_blank" class="text-muted">
+                        {{portfolio.link}}
+                    </a>
+                </span>
+            </p>
+            <p class="mb-4 fw-light"><span>
+                {{portfolio.description}}
+            </span></p>
+            <h4 class="fs-3 mb-4">Technologies Used</h4>
+            <ul [ngStyle] = "{'list-style-type': 'circle'}">
+                <li *ngFor = 'let tech of portfolio.technologies'>
+                    <p>
+                        <span>{{ tech }}</span>
+                    </p>
+                </li>
+            </ul>
+            <div class="btn btn-up-lg rounded-pill mb-4">
+                <a href="" target="_blank">
+                    <b class="fs-6 fw-light">
+                        View Code
+                    </b>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

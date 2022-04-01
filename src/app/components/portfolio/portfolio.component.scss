@@ -1,0 +1,80 @@
+@import '../../../themingKit/src/main-theme';
+
+.main-content {
+    background-color: $gray-100;
+    min-height: 100vh;
+    min-width: 77vw;
+
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+    }
+
+    .heading {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin-top: 30px;
+    
+        .description {
+            justify-content: end;
+            align-self: center;
+    
+        }
+    }
+
+    .projects {
+        .toggle-buttons{
+            ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                list-style: none;
+
+                li {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .portfolio-array {
+            @media screen and (min-width: 992px) {
+                display: flex;
+                flex-direction: row;
+            }
+            .carded-sect {
+                position: relative;
+                width: auto;
+                background: $primary-light;
+                background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
+                img {
+                    max-height: 300px;
+                    max-width: 300px;
+                    opacity: 1;
+                    display: block;
+                    transition: .5s ease;
+                    backface-visibility: hidden;
+                }
+                .middle {
+                    transition: .5s ease;
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    text-align: center;
+                  }
+
+                  &:hover {
+                    img {
+                        opacity: .1;
+                        transform: scale(.98)
+                    }
+                    .middle {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    
+}
