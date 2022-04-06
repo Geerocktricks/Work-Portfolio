@@ -15,30 +15,35 @@
     <div class="row projects col-md-12 p-4">
         <div class="toggle-buttons mb-4">
             <ul class="ps-4">
-                <li><span class="text-muted">All</span></li>
-                <li><span class="text-muted">Javascript</span></li>
-                <li><span class="text-muted">Angular</span></li>
-                <li><span class="text-muted">Python</span></li>
-                <li><span class="text-muted">Flask</span></li>
-                <li><span class="text-muted">Django</span></li>
+                <li><span class="text-muted filter" (click) = 'all()'>All</span></li>
+                <li><span class="text-muted filter" (click) = 'javascript()'>Javascript</span></li>
+                <li><span class="text-muted filter" (click) = 'angular()'>Angular</span></li>
+                <li><span class="text-muted filter" (click) = 'python()'>Python</span></li>
+                <li><span class="text-muted filter" (click) = 'flask()'>Flask</span></li>
+                <li><span class="text-muted filter" (click) = 'django()'>Django</span></li>
             </ul>
         </div>
-        <div class="portfolio-array p-4 row col-md-12" *ngFor = 'let project of projects'>
-            <div class="carded-sect col-md-3">
-                <a [routerLink]="['/portfolio', project.title]">
-                    <img src="{{project.image}}" alt="Project image" class="img-fluid">
-                </a>
-                <div class="middle text-white">
-                    <div class="text">
-                        <ul>
-                            <li *ngFor = 'let tech of project.technologies'>
-                                {{tech}}
-                            </li>
-                        </ul>
+        <div class="" *ngIf='projects; else notUpdated'>
+            <div class="portfolio-array p-4 row col-md-12" *ngFor = 'let project of projects'>
+                <div class="carded-sect col-md-3">
+                    <a [routerLink]="['/portfolio', project.title]">
+                        <img src="{{project.image}}" alt="Project image" class="img-fluid">
+                    </a>
+                    <div class="middle text-white">
+                        <div class="text">
+                            <ul>
+                                <li *ngFor = 'let tech of project.technologies'>
+                                    {{tech}}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ng-template #notUpdated style="background-color: beige;">
+            <h2>notUpdated</h2>
+        </ng-template>
         
     </div>
 </div>

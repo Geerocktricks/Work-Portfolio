@@ -14,5 +14,9 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onSubmit() {
+    console.log(this.contactUserModel)
+    alert('Succesfully sumited')
+  }
 
 }

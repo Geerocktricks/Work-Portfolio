@@ -17,6 +17,7 @@ import { TruncatePostsPipe } from './pipes/truncate-posts.pipe';
 import { PortfolioDetailsComponent } from './components/portfolio/portfolio-details/portfolio-details.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { MentoringSessionComponent } from './components/mentoring-session/mentoring-session.component';
+import { MentoringSessionFormComponent } from './components/mentoring-session/mentoring-session-form/mentoring-session-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MentoringSessionComponent } from './components/mentoring-session/mentor
     PortfolioDetailsComponent,
     ContactFormComponent,
     MentoringSessionComponent,
+    MentoringSessionFormComponent,
   ],
   imports: [
     BrowserModule,

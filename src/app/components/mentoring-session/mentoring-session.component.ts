@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mentoring-session.component.scss']
 })
 export class MentoringSessionComponent implements OnInit {
+  displayForm: boolean = false;
+  text: string = 'Book Now'
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  displayFormFunction(): void {
+    this.displayForm = !this.displayForm;
+    if(this.displayForm) {
+      this.text = 'Close Form'
+    } else {
+      this.text = 'Book Now';
+    }
   }
 
 }

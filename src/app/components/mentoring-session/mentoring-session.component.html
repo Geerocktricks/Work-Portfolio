@@ -59,34 +59,12 @@
                                   <small>Plan of action</small>
                               </li>
                           </ul>
-                          <div class="btnHolder text-center">
-                            <button class="btn btn-primary bookNow" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
-                          </div>
                         </div>
                       </div>
                 </div>
 
-                <!-- 1:1 Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-
-                <!-- Follow-up Modal -->
+                <!-- Follow-up -->
                 <div class="col-md-5 mb-4">
                     <div class="card text-center btn-up">
                         <div class="card-header">
@@ -101,10 +79,14 @@
                                   </small>
                               </span>
                           </p>
-                          <a href="#" class="btn btn-primary bookNow">Book Now</a>
                         </div>
                       </div>
                 </div>
+                <button class="btn btn-outline-secondary rounded-pill" (click)="displayFormFunction()">{{ text }}</button>
+                
+            </div>
+            <div class="displayFormHolder" *ngIf='displayForm'>
+                <app-mentoring-session-form></app-mentoring-session-form>
             </div>
         </div>
         <div class="howItWorks col-md-5">

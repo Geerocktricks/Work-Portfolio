@@ -10,9 +10,75 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; 
+body { 
+    margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    position: relative;
+
+    .loader {
+        background-color: $gray-100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        z-index: 99999999999999;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: 2s ease-in-out;
+
+        h1 {
+            animation: shadowLoader 3s ease-in-out;
+            color: darken($color: $gray-100, $amount: 3%);
+            text-shadow: -1px -1px 1px lighten($color: $gray-100, $amount: 10%), 2px 2px  2px rgba(49, 89, 158, .8);        
+        }
+        
+    }
     
+}
+@keyframes shadowLoader {
+    0% {
+        font-weight: bolder;
+        background-color: darken($color: $gray-100, $amount: 30%);
+        color: transparent;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 1);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -background-clip: text;
+        transform: scale(.98)
+    };
+    10% {
+        font-weight: bolder;
+        background-color: darken($color: $gray-100, $amount: 25%);
+        color: transparent;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, .9);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -background-clip: text;
+        transform: scale(1.03);
+    };
+    50% {
+        color: darken($color: $gray-100, $amount: 3%);
+        text-shadow: -1px -1px 1px lighten($color: $gray-100, $amount: 10%), 2px 2px  2px rgba(49, 89, 158, .8);;
+        transform: scale(1.05);
+    };
+    75% {
+        color: darken($color: $gray-100, $amount: 3%);
+        text-shadow: -1px -1px 1px lighten($color: $gray-100, $amount: 10%), 2px 2px  2px rgba(49, 89, 158, .8);
+        transform: scale(1.2);
+    };
+    100% {
+        font-weight: bolder;
+        background-color: darken($color: $gray-100, $amount: 25%);
+        color: transparent;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, .9);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -background-clip: text;
+        transform: scale(1.05);
+
+    }
 }
 
 

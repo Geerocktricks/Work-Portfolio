@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
     }
   }
 
+  displayLoader: boolean = true;
+
   @HostListener('window: resize', ['$event'])
     onResize(event: { target: { innerWidth: number; }; }) {
       if (event.target.innerWidth > 768) {
@@ -28,4 +30,11 @@ export class AppComponent implements OnInit {
       }
 
     }
+
+    @HostListener('window:load')
+      onLoad() {
+          setTimeout(() => {
+            this.displayLoader= false;
+          }, 3000)
+      }
 }

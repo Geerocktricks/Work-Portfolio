@@ -4,5 +4,7 @@ export interface Portfolio {
     title: string;
     description: string;
     technologies: string[];
-    link: string
+    link: string,
+    code: string,
+    tag: string
 }

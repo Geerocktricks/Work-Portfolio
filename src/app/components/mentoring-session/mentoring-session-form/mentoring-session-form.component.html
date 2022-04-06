@@ -1,0 +1,109 @@
+<h4 class="fs-3 mb-4">Mentoring Enrollment Form</h4>
+<form class="mb-4 p-3" #mentoringForm='ngForm' (ngSubmit)='onSubmit()' novalidate>
+    <div class="form-group mb-2">
+        <label for="name">
+            <span class="text-muted">
+                Name:
+            </span>
+        </label>
+        <input type="text" name="name" class="form-control btn-up mt-2 rounded-pill" placeholder="Your Full Name" [(ngModel)]='mentoringUser.name' #name='ngModel' required
+        [class.is-invalid]='name.invalid && name.touched'>
+
+        <small class="text-danger" *ngIf='name.invalid && name.touched'>
+            *Name field is required
+        </small>
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="email">
+            <span class="text-muted">
+                Email:
+            </span>
+        </label>
+        <input type="email" name="email" class="form-control btn-up mt-2 rounded-pill" placeholder="Email" [(ngModel)]='mentoringUser.email' required #email='ngModel' [class.is-invalid] = 'email.invalid && email.touched' pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+        <div class="err-messages" *ngIf='email.errors && (email.invalid || email.touched)'>
+            <small class="text-danger" *ngIf= 'email.hasError("required") && email.touched'>
+                *Email feild is required
+            </small>
+            <small class="text-danger" *ngIf= 'email.hasError("pattern")'>
+                *Invalid email pattern
+            </small>
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="phone">
+            <span class="text-muted">
+                Phone:
+            </span>
+        </label>
+        <input type="tel" name="tel" id="tel" class="form-control btn-up mt-2 rounded-pill" placeholder="#### ### ###" [(ngModel)]='mentoringUser.phone' #phone='ngModel'
+        pattern="\d{10}$" [class.is-invalid] = 'phone.invalid && phone.touched' required>
+        <div class="err-messages" *ngIf='phone.errors && (name.invalid || name.touched)'>
+            <small class="text-danger" *ngIf='phone.hasError("required") && phone.touched'>
+                *Phone number is required
+            </small>
+            <small class="text-danger" *ngIf='phone.hasError("pattern") && phone.touched'>
+                *Phone number should have 10 digits
+            </small>
+        </div>
+    </div>
+
+    <div class="form-group mb-4 mt-4">
+        <label for="topic">
+            <span class="text-muted">
+                Language you're interested in:
+            </span>
+        </label><br>
+        <select (blur)='validateTopic(topic.value)' (change)='validateTopic(topic.value)' name="topic" class="custom-select btn-up mt-2 rounded-pill" [(ngModel)]='mentoringUser.topic'  #topic='ngModel' [class.selectError]='topicHasError && topic.touched'>
+            <option value="default" class="defaultValue">I'm interested in</option>
+            <option *ngFor='let topic of topics'>
+                {{ topic }}
+            </option>
+        </select><br>
+        <small class="text-danger" *ngIf='topicHasError && topic.touched'>
+            *Kidnly select a language
+        </small>
+    </div>
+
+    <div class="form-group mb-4 mt-4">
+        <label for="" class="form-check-label">
+            <span class="text-muted">
+                Start Date:
+            </span>
+        </label><br>
+        <input type="date" name="date" id="date" class=" form-control btn-up mt-2 rounded-pill" [(ngModel)]='mentoringUser.startDate' #date required>
+        <small class="text-danger">
+            *kindly select a day from {{today | date:'shortDate'}} onwards
+        </small>
+    </div>
+
+    <div class="mb-4 mt-4">
+        <label>
+            <span class="text-muted">
+                Time preference
+            </span>
+        </label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="timePreference" value="morning" [(ngModel)]='mentoringUser.timePreference' required>
+            <label class='form-check-label'>Morning (9AM - 11AM)</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="timePreference" value="evening" [(ngModel)]='mentoringUser.timePreference' required>
+            <label class='form-check-label'>Evening (5PM - 8PM)</label>
+        </div>
+    </div>
+
+    <div class="form-check mb-4">
+        <input type="checkbox" name="subscription" class="form-check-input" [(ngModel)]='mentoringUser.subscribe' required>
+        <label for="" class="form-check-label">
+            <span class="text-muted">
+                Send me promotional offers
+            </span>
+        </label>
+    </div>
+
+    <button class="btn btn-primary text-white rounded-pill" type="submit" [disabled]='mentoringForm.form.invalid || (topicHasError && topic.touched) || topic.untouched'>
+        Submit
+    </button>
+</form>

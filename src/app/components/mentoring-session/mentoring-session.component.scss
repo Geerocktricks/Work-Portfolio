@@ -54,15 +54,6 @@
                         margin-right: .2em;
                     }
                 }
-                .bookNow {
-                    background: $primary-light;
-                    background: linear-gradient(90deg, $primary-light 0%, $secondary-light 100%);
-                    color: $gray-100;
-
-                    :hover {
-                        background-color: $primary;
-                    }
-                }
             }
         }
     }

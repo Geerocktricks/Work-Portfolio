@@ -28,6 +28,12 @@ mat-drawer-container {
 
         .social-svg {
             border-radius: 5px;
+
+            &:hover {
+                svg {
+                    color: #e3e3e3;
+                }
+            }
         }
     }
     mat-drawer-content {
