@@ -31,5 +31,15 @@ export const portfolioArray: Portfolio[] = [
         link: 'https://geerocktricks.github.io/WeatherForecast/',
         code :'https://github.com/Geerocktricks/WeatherForecast',
         tag: 'javascript'
+    },
+    {
+        id: 4,
+        image: 'assets/projects/recipePlanner3.jpg',
+        title: 'Recipe Planner',
+        description: 'Recipe Planner is an API fetch focused website that focuses on asynchronous javascript to communicate with three different endpoint of the [https://openweathermap.org/api]',
+        technologies: ['Javascript', 'Fetch'],
+        link: 'https://geerocktricks.github.io/Recipe-App/',
+        code :'https://github.com/Geerocktricks/Recipe-App',
+        tag: 'javascript'
     }
 ]
